@@ -1,2 +1,2 @@
-# vpp-ubuntu18
-vpp for ubuntu18 base
+# vpp-ubuntu20
+vpp for ubuntu20 base
