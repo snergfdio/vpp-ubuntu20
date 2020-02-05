@@ -1,8 +1,8 @@
-FROM ubuntu:18.04
+FROM ubuntu:focal
 MAINTAINER Ed Kern <ejk@cisco.com>
-LABEL Description="VPP ubuntu 18 baseline" 
+LABEL Description="VPP ubuntu 20 baseline" 
 LABEL Vendor="cisco.com" 
-LABEL Version="1.1"
+LABEL Version="0.1"
 
 
 # Setup the environment
