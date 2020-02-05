@@ -18,7 +18,7 @@ RUN apt-get -q update && \
         bash \
         bash-completion \
         bc \
-        biosdevname \
+#        biosdevname \
         ca-certificates \
         cloud-init \
         cron \
@@ -78,7 +78,7 @@ RUN apt-get -q update && \
         dtach \
         && rm -rf /var/lib/apt/lists/*
 
-RUN add-apt-repository -y ppa:openjdk-r/ppa
+#RUN add-apt-repository -y ppa:openjdk-r/ppa
 
 RUN apt-get -q update && \
     apt-get install -y -qq \
@@ -131,7 +131,7 @@ RUN apt-get -q update && \
         libltdl-dev \
         libmail-sendmail-perl \
         libmbedtls-dev \
-        libpython-dev \
+#        libpython2-dev \
         libpython2.7-dev \
         libsctp-dev \
         libsigsegv2 \
@@ -164,7 +164,7 @@ RUN apt-get -q update && \
         python-apt \
         python-cffi \
         python-cffi-backend \
-        python-dev \
+#        python-dev \
         python-enum34 \
         python-pip \
         python-ply \
@@ -224,7 +224,7 @@ ENV CCACHE_DIR=/var/ccache
 ENV CCACHE_READONLY=true
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
-RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7 && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+#RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7 && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 
 RUN curl -L https://packagecloud.io/fdio/master/gpgkey |sudo apt-key add -
 #ADD files/99fd.io.list /etc/apt/sources.list.d/99fd.io.list
@@ -235,13 +235,13 @@ RUN curl -L https://packagecloud.io/fdio/master/gpgkey |sudo apt-key add -
 
 #RUN mkdir -p /w/workspace/vpp-verify-master-ubuntu1804 && mkdir -p /home/jenkins
 RUN mkdir -p /w/workspace && mkdir -p /home/jenkins
-RUN apt-get purge -y default-jre-headless openjdk-9-jdk-headless openjdk-9-jre-headless || true
+#RUN apt-get purge -y default-jre-headless openjdk-9-jdk-headless openjdk-9-jre-headless || true
 
-ADD files/default-jdk-headless_1.8-59ubuntu2_amd64.deb /tmp/default-jdk-headless_1.8-59ubuntu2_amd64.deb
-ADD files/default-jre-headless_1.8-59ubuntu2_amd64.deb /tmp/default-jre-headless_1.8-59ubuntu2_amd64.deb
+#ADD files/default-jdk-headless_1.8-59ubuntu2_amd64.deb /tmp/default-jdk-headless_1.8-59ubuntu2_amd64.deb
+#ADD files/default-jre-headless_1.8-59ubuntu2_amd64.deb /tmp/default-jre-headless_1.8-59ubuntu2_amd64.deb
 
-RUN apt-get install -y /tmp/default-jre-headless_1.8-59ubuntu2_amd64.deb /tmp/default-jdk-headless_1.8-59ubuntu2_amd64.deb
-ADD files/jre /etc/apt/preferences.d/jre
+#RUN apt-get install -y /tmp/default-jre-headless_1.8-59ubuntu2_amd64.deb /tmp/default-jdk-headless_1.8-59ubuntu2_amd64.deb
+#ADD files/jre /etc/apt/preferences.d/jre
 ADD files/pc_push /usr/local/bin/pc_push
 ADD files/packagecloud /root/.packagecloud
 ADD files/packagecloud_api /root/packagecloud_api
