@@ -326,7 +326,7 @@ RUN wget -O /w/Downloads/dpdk-18.08.tar.xz http://dpdk.org/browse/dpdk/snapshot/
 RUN wget -O /w/Downloads/v0.47.tar.gz http://github.com/01org/intel-ipsec-mb/archive/v0.47.tar.gz
 RUN wget -O /w/Downloads/v0.48.tar.gz http://github.com/01org/intel-ipsec-mb/archive/v0.48.tar.gz
 RUN wget -O /w/Downloads/v0.49.tar.gz http://github.com/01org/intel-ipsec-mb/archive/v0.49.tar.gz
-RUN curl -s https://packagecloud.io/install/repositories/fdio/master/script.deb.sh | sudo bash
+#RUN curl -s https://packagecloud.io/install/repositories/fdio/master/script.deb.sh | sudo bash
 
 #bad and open ssh keys for csit
 ADD files/sshconfig /root/.ssh/config
