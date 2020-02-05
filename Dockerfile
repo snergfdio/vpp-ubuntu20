@@ -2,7 +2,7 @@ FROM ubuntu:focal
 MAINTAINER Ed Kern <ejk@cisco.com>
 LABEL Description="VPP ubuntu 20 baseline" 
 LABEL Vendor="cisco.com" 
-LABEL Version="0.1"
+LABEL Version="0.01"
 
 
 # Setup the environment
@@ -320,9 +320,6 @@ RUN pip3 install scipy==1.1.0
 
 RUN mkdir -p /var/cache/vpp/python
 RUN mkdir -p /w/Downloads
-#RUN wget -O /w/Downloads/nasm-2.13.01.tar.xz http://www.nasm.us/pub/nasm/releasebuilds/2.13.01/nasm-2.13.01.tar.xz
-#RUN wget -O /w/Downloads/dpdk-18.02.tar.xz http://fast.dpdk.org/rel/dpdk-18.02.tar.xz
-#RUN wget -O /w/Downloads/dpdk-17.11.tar.xz http://fast.dpdk.org/rel/dpdk-17.11.tar.xz
 RUN wget -O /w/Downloads/dpdk-18.02.1.tar.xz http://dpdk.org/browse/dpdk-stable/snapshot/dpdk-stable-18.02.1.tar.xz
 RUN wget -O /w/Downloads/dpdk-18.05.tar.xz http://dpdk.org/browse/dpdk/snapshot/dpdk-18.05.tar.xz
 RUN wget -O /w/Downloads/dpdk-18.08.tar.xz http://dpdk.org/browse/dpdk/snapshot/dpdk-18.08.tar.xz
